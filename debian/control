@@ -1,9 +1,12 @@
 Source: base-files
 Section: admin
 Priority: required
-Maintainer: Vyatta Package Maintainers <DL-vyatta-help@att.com>
-Build-Depends: debhelper (>= 9)
-Standards-Version: 3.9.6
+Maintainer: NuDanOS Maintainers <jon@fernandez.tech>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Vcs-Git: https://github.com/nudanos/base-files.git
+Vcs-Browser: https://github.com/nudanos/base-files
 
 Package: base-files-vyatta
 Architecture: any
