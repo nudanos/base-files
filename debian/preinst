@@ -6,7 +6,7 @@ pkg=base-files-vyatta
 
 case "${1}" in
     install|upgrade)
-        for file in /etc/issue /etc/issue.net; do
+        for file in /etc/issue /etc/issue.net /etc/os-release; do
 	    if ! [ -e ${file}.debian ]; then
 		dpkg-divert --package ${pkg} --add --rename \
                     --divert ${file}.debian ${file}

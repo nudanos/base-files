@@ -1,7 +1,7 @@
-PRETTY_NAME="DANOS"
-NAME="DANOS"
+PRETTY_NAME="NuDanOS"
+NAME="NuDanOS"
 ID=vyatta
 ID_LIKE=debian
-HOME_URL="www.att.com"
-SUPPORT_URL="www.att.com"
-BUG_REPORT_URL="www.att.com"
+HOME_URL="https://github.com/nudanos"
+SUPPORT_URL="https://github.com/nudanos/distro/issues"
+BUG_REPORT_URL="https://github.com/nudanos/distro/issues"
