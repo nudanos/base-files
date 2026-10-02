@@ -6,6 +6,12 @@ pkg=base-files-vyatta
 
 case "${1}" in
     install|upgrade)
+        # live-build diverts /etc/os-release locally while it installs the
+        # image's packages and drops that diversion afterwards; take it over.
+        if [ "$(dpkg-divert --listpackage /etc/os-release)" = LOCAL ] && \
+           [ "$(dpkg-divert --truename /etc/os-release)" = /etc/os-release.debootstrap ]; then
+            dpkg-divert --local --remove --no-rename /etc/os-release
+        fi
         for file in /etc/issue /etc/issue.net /etc/os-release; do
 	    if ! [ -e ${file}.debian ]; then
 		dpkg-divert --package ${pkg} --add --rename \

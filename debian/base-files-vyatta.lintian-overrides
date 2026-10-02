@@ -1,2 +1,5 @@
 base-files-vyatta: new-essential-package
 base-files-vyatta: dir-or-file-in-opt
+# preinst removes only live-build's own temporary local diversion of
+# /etc/os-release (to /etc/os-release.debootstrap) so the package can divert it.
+base-files-vyatta: package-uses-local-diversion [preinst:*]
