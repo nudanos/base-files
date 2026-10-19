@@ -11,7 +11,7 @@ case "${1}" in
 	fi
 
 	for file in /etc/issue /etc/issue.net /etc/os-release; do
-	    if [ -e ${file}.debian -a -L ${file} ]; then
+	    if [ -e ${file}.debian ] && [ -L ${file} ]; then
 		rm -f ${file}
 		dpkg-divert --package ${pkg} --remove --rename \
                     --divert ${file}.debian ${file}
